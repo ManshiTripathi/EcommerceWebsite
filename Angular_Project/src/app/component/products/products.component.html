@@ -1,0 +1,89 @@
+<app-header></app-header>
+
+<div class="card-top container-fluid" >
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')">
+                <img src="https://dao54xqhg9jfa.cloudfront.net/Category/f78249a3-c0c5-caae-a743-5b3669471b19/original/1601901874.191--2020-10-0518_14_34--472.png?format=webp" alt="">
+                <h6>All items</h6>
+            </a>
+        </div>
+
+        <div class="item">
+          <a (click)="filter('Mutton')">
+              <img src="https://dao54xqhg9jfa.cloudfront.net/Category/a2996820-bac5-5eb5-edf8-eae5bff352ce/original/1592902158.6637--2020-06-2314_19_18--472.png?format=webp" alt="">
+              <h6>Chicken</h6>
+          </a>
+      </div>
+
+        <div class="item">
+            <a (click)="filter('Fish&Seafood')">
+                <img src="https://dao54xqhg9jfa.cloudfront.net/Category/574f3ef3-e983-e441-ac54-af394e1dc0d1/original/1592241659.9546--2020-06-1522_50_59--472.png?format=webp" alt="">
+                <h6>Fish & Seafood</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Chicken')">
+                <img src="https://dao54xqhg9jfa.cloudfront.net/Category/493a653d-56cb-fc9a-7a33-5b30c1a3d27e/original/1592241599.8492--2020-06-1522_49_59--472.png?format=webp" alt="">
+                <h6>Mutton</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Spreads')">
+                <img style="width: 62px; margin-top: 5px;" src="https://dao54xqhg9jfa.cloudfront.net/Category/1aebd012-022b-0e44-a673-21818a98320c/original/1592241756.9036--2020-06-1522_52_36--472.png?format=webp" alt="">
+                <h6>Spreads</h6>
+            </a>
+        </div>
+        <div class="item">
+          <a (click)="filter('Eggs')">
+              <img style="width: 62px; margin-top: 5px;" src="https://dao54xqhg9jfa.cloudfront.net/Category/06eb2239-1fcc-a5de-2d57-a0081bca5c80/original/1592241843.644--2020-06-1522_54_03--472.png?format=webp" alt="">
+              <h6>Eggs</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a (click)="filter('ColdCuts')">
+            <img style="width: 62px; margin-top: 5px;" src="https://dao54xqhg9jfa.cloudfront.net/Category/feaaee0e-eb81-2444-c869-952cf0858977/original/1592241896.5018--2020-06-1522_54_56--472.png?format=webp" alt="">
+            <h6>Cold Cuts</h6>
+        </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Prawn')">
+          <img style="width: 62px; margin-top: 5px;" src="https://s3-ap-southeast-1.amazonaws.com/licious/cat/42/web_icon/1612850724.2211--2021-02-0911:35:24--472?format=webp" alt="">
+          <h6>Prawns</h6>
+      </a>
+  </div>
+  <div class="item">
+    <a (click)="filter('Kabab&Tandoor')">
+        <img style="width: 62px; margin-top: 5px;" src="https://s3-ap-southeast-1.amazonaws.com/licious/cat/39/web_icon/1615189641.1944--2021-03-0813:17:21--472?format=webp" alt="">
+        <h6>Kebabs & Tandoor</h6>
+    </a>
+</div>
+<div class="item">
+  <a (click)="filter('Snacks')">
+      <img style="width: 62px; margin-top: 5px;" src="https://s3-ap-southeast-1.amazonaws.com/licious/cat/67/web_icon/1636101435.3459--2021-11-0514:07:15--472?format=webp" alt="">
+      <h6>Snack</h6>
+  </a>
+</div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;font-family: fantasy;">{{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;font-family: sans-serif;">{{item.description}}</p>
+                <p style="font-weight: bolder;"><strong>Price:</strong> Rs.{{item.price}}</p>
+                <button class="btn " style=" color: white; background-image: linear-gradient(to right top, #020000, #421114, #7e101a, #bc0719, #fb0505); border-radius: 10px 10px 10px 10px;"(click)=addtocart(item)>Add to Bag</button>
+            </div>
+        </ng-container>
+
+    </div>
+
+</div>
+
+
+<app-review></app-review>
+<app-footer></app-footer>

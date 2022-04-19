@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="text-center">
+        <h1 style="font-family: sans-serif; font-weight: 800;" > Login </h1>
+        <h6 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Please Enter UserInput and Password!!</h6>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" style="font-family: cursive; font-weight: 600;">Email Address</label>
+            <input formControlName = "Email"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abc@gmail.com">
+
+            <span class="text-danger" *ngIf="loginForm.controls['Email'].dirty && loginForm.hasError('required','Email')">*Email Is Required</span>
+
+          </div>
+          <div class="mb-3">
+            <label for="passcode" class="form-label" style="font-family: cursive; font-weight: 600" >Password</label>
+            <input  formControlName = "Passcode"  type=" password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp">
+            <span class="text-danger" *ngIf="loginForm.controls['Passcode'].dirty && loginForm.hasError('required','Passcode')">*Passcode Is Required</span>
+          </div>
+        
+          <button   type="submit" class="btn btn-danger" style="margin: 2px 68px; border-radius: 10px;"> Login</button>
+        </form>
+        <a  style = "color: rgb(248, 244, 244); margin:2px 45px;"routerLink="/register">Not register?click to Signup!</a>
+    </div>
+  </div>
+</div>
+</div>
+
+

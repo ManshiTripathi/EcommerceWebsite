@@ -1,0 +1,38 @@
+.card
+{
+  border:none;
+  width:500px;
+  padding: 40px;
+  position: absolute;
+  top:75%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  // // background:  linear-gradient(-45deg,#167282,#476970);
+  // background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+  background-image: linear-gradient(to right bottom, #f11111, #bf0048, #771455, #331d3e, #0b0b0d);
+
+
+  border-top-right-radius: 11pc;
+
+  border-bottom-left-radius: 11pc;
+  box-shadow: 11px 10px #e9e5e5;
+
+}
+// .c{
+//   background-image: url("https://thumbs.dreamstime.com/z/shopping-cart-ecommerce-marketing-channel-distribution-concept-supermarket-background-shopping-cart-ecommerce-marketing-channel-142243947.jpg");
+//   background-repeat: no-repeat;
+// }
+.form-control{
+  border-radius: 15.25px;
+}
+ div .btn[_ngcontent-gnq-c53] {
+  padding: 0.375rem 3.75rem;
+}
+.card h1
+,h6{
+  color:rgb(242, 234, 234);
+}
+label{
+  color:rgb(248, 239, 239);
+
+}

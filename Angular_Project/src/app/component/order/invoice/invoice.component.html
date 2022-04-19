@@ -1,0 +1,62 @@
+<div class="card" >
+  <div class="card-body">
+    <div class="container mb-5 mt-3">
+      <div class="row d-flex align-items-baseline">
+        <div class="col-xl-9">
+          <p style="color: #7e8d9f;font-size: 20px;">Invoice &gt;&gt; <strong>Item Bill </strong></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-md-12">
+          <div class="text-center">
+            <i class="far fa-building fa-4x ms-0" style="color:#8f8061 ;"></i>
+            <p class="pt-2">Licious</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-8">
+            <ul class="list-unstyled">
+              <li class="text-muted"> Name:- <span style="color:#101010 ;">{{invoiceobj.FullName}}</span></li>
+              <li class="text-muted" style="color:#101010 ;" > Your Address:-{{invoiceobj.UserAddress}}</li>
+              <li class="text-muted"style="color:#101010 ;"> Your PhoneNumber:-{{invoiceobj.PhoneNumber}}</li>
+              <li class="text-muted" style="color:#101010 ;"> Email Address:- {{invoiceobj.Email}}</li>
+
+            </ul>
+          </div>
+          <div class="col-xl-4">
+            <p class="text-muted">Invoice</p>
+            <ul class="list-unstyled">
+              <li class="text-muted"><i class="fas fa-circle" style="color:#8f8061 ;"></i> <span
+                  class="fw-bold"> Product Datails :-{{invoiceobj.ProductName}}</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row my-2 mx-1 justify-content-center">
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5 class="mb-2">
+            </h5>
+            <p class="text-danger"><small>You save 25%</small></p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xl-8">
+            <p class="ms-3">Thanks For Chossing Our Website.Hope You Enjoyed While Shooping</p>
+          </div>
+          <div class="col-xl-3">
+            <ul class="list-unstyled">
+              <li class="text-muted ms-3"><span class="text-black me-4">Tax</span>3%</li>
+              <li class="text-muted ms-3 mt-2" style="color: rgb(225, 22, 22);"><span class="text-black me-4">Shipping Charge</span>Rs.15</li>
+            </ul>
+            <p class="text-black float-start"><span class="text-black me-3"> TOTAL:- {{invoiceobj.Price}}</span><span
+              style="font-size: 25px;"></span></p>
+            <p class="text-black float-start"><span class="text-black me-3"> SUBTOTAL:- {{invoiceobj.Price + 40}}</span><span
+                style="font-size: 25px;"></span></p>
+          </div>
+          <button routerLink="/products" class="btn btn-danger"> Shop More ? Click Me</button>
+          <button routerLink="/home"  (click)="logOut()" class="btn btn-primary"> Log out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

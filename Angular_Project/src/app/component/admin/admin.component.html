@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand" href="#" style="font-weight: 800; color: white;"> Admin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="font-weight: 500; color: rgb(215, 180, 180);">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="font-weight: 500; color: rgb(181, 161, 161);"> Products <span class="sr-only">(current)</span></a>
+      </li>
+
+
+
+    </ul>
+    <button type="button" class="btn btn-success mx-5" data-bs-toggle="modal" data-bs-target="#AddEmployee"> Add Product</button>
+    <button type="button" class="btn btn-danger"  (click)="logOut()"> Logout </button>
+  </div>
+</nav>
+<div class="car" >
+
+      <div class="container" style="padding: 20px; background-color: #f0eae6;" >
+          <div class="card-table">
+              <div class="cart-product">
+                  <table class="table table-responsive">
+                      <thead>
+                          <tr>
+                              <th>Sr.No</th>
+                              <th>Product Name</th>
+                              <th>Product Image</th>
+                              <th>Description</th>
+                              <th>Price</th>
+
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let item of productList">
+                              <td>{{item.id}}</td>
+                              <td>{{item.title}}</td>
+                              <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
+                              <td style="width: 25%;">{{item.description}}</td>
+                              <th style="width: 12%;">{{item.price}}</th>
+
+                              <td>
+                                  <button (click)="deleteproduct(item)" class="btn btn-danger mx-3"><i class="fas fa-trash-alt"></i></button>
+                                  <button (click)="onEdit(item)" class="btn btn-primary" style="margin: 3px -113px;"  data-bs-toggle="modal" data-bs-target="#AddEmployee"> Edit </button>
+                              </td>
+                          </tr>
+
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+      </div>
+
+      <div class="modal fade" id="AddEmployee" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="LoginModalLabel">Update Product</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="formValue">
+
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Title</label>
+                  <input formControlName ="title"     type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Price</label>
+                  <input formControlName ="price"     type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"> Description</label>
+                  <input formControlName ="description"     type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Image</label>
+                  <input formControlName ="image" type="text" class="form-control" id="exampleInputPassword1">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type ="button" id="cancel" class="btn btn-secondary"> close</button>
+              <button type="button" class="btn btn-primary" (click)=" postProductDetails()">Save changes</button>
+              <button type="button" class="btn btn-primary" (click)="updateProductDetails()">Update</button>
+
+            </div>
+          </div>
+        </div>

@@ -1,0 +1,37 @@
+.card
+{
+  border:none;
+  width:372px;
+  // border-bottom-right-radius: 36px;
+  border-bottom-left-radius: 11pc;
+  border-top-right-radius: 11pc;
+  padding: 40px;
+  position: absolute;
+  top:47%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  // background:  linear-gradient(-45deg,#167282,#476970);
+  background-image: linear-gradient(to right bottom, #f11111, #bf0048, #771455, #331d3e, #0b0b0d);
+  box-shadow: 11px 10px #e9e5e5;
+}
+.btn{
+  padding: 0.375rem 3.75rem;
+}
+.form-control{
+  border-radius: 15.25px;
+}
+.card:hover{
+  color:#0f0000;
+}
+.card h1
+,h6{
+  color:rgb(238, 228, 228);
+}
+label{
+  color:rgb(249, 245, 245)
+}
+.form-control
+{
+  border: -23px solid #ced4da;
+}

@@ -1,0 +1,116 @@
+<!-- <div class="container c" >
+  <div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="text-center">
+        <h1>Order Table </h1>
+
+      </div>
+      <form [formGroup]="orderForm">
+          <div class="mb-3">
+            <label for="First Name" class="form-label" >Full Name</label>
+          <input  formControlName = "fullname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="FirstNameHelp" placeholder="FullName">
+          </div>
+          <div class="mb-3">
+            <label for="Last Name" class="form-label">Email</label>
+      <input  formControlName = "Email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="LastNameHelp" placeholder="LastName">
+
+          </div>
+          <div class="mb-3">
+            <label for="Number" class="form-label">Mobile Number</label>
+            <input  formControlName = "Mobile" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="mobilenumberHelp" placeholder="MobileNumber">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">User Address</label>
+            <input formControlName = "Address"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+            <div   id="emailHelp" class="form-text" style="color: rgb(229, 236, 26);">We'll never share your email with anyone else.</div>
+
+          </div>
+
+          <button (click)="orderPlace()" type="submit" class="btn btn-primary">Signup</button>
+        </form>
+
+    </div>
+  </div>
+</div>
+</div> -->
+
+<section class="vh-100" style="background-color: #eee;" *ngIf="showorder">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Fill The Required Details</p>
+
+                <form class="mx-1 mx-md-4" [formGroup]="orderForm">
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control"  formControlName = "fullname" />
+                      <label class="form-label" for="form3Example1c">Your Name</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" class="form-control" formControlName = "Email"/>
+                      <label class="form-label" for="form3Example3c">Your Email</label>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-phone fa-lg me-3 fa-phone"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control"  formControlName = "Mobile"  />
+                      <label class="form-label" for="form3Example1c">Mobile Number</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fas fa-address-card fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control" formControlName = "Address"/>
+                      <label class="form-label" for="form3Example1c">Your Address</label>
+                    </div>
+                  </div>
+
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input
+                      class="form-check-input me-2"
+                      type="checkbox"
+                      value=""
+                      id="form2Example3c"
+                    />
+                    <label class="form-check-label" for="form2Example3">
+                      I agree all statements in <a href="#!">Terms of service</a>
+                    </label>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button  (click)="orderPlace()"  type="button" class="btn btn-primary btn-lg"> Submit</button>
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-invoice [invoiceobj]="invoiceitem" *ngIf="showinvoice" >
+</app-invoice>
